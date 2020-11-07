@@ -2,6 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Authors>Dan Gilleland</Authors>
+    <Company>None</Company>
+    <Description>A set of simple exceptions to represent business rules.</Description>
+    <RepositoryUrl>https://github.com/dgilleland/BusinessRuleException</RepositoryUrl>
+    <PackageReleaseNotes>Alpha release, for testing with the MessageUserControl.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/dgilleland/BusinessRuleException</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
