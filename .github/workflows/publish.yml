@@ -15,12 +15,13 @@ jobs:
       #   uses: actions/setup-dotnet@v1
       #   with:
       #     dotnet-version: 3.1.200
-
+      - name: 
       - name: Run commands
         run: |
+          cd src\FreeCode.Exceptions
           dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
-          dotnet pack "src/FreeCode.Exceptions/FreeCode.Exceptions.csproj" --configuration Release
-          dotnet nuget push "src/FreeCode.Exceptions/bin/Release/FreeCode.Exceptions.0.1.0.nupkg" --source "github"
+          dotnet pack -c Release -o out
+          dotnet nuget push out\FreeCode.Exceptions.0.1.0.nupkg --source "github" -SkipDuplicate
       # - name: Build solution and generate NuGet package
       #   run: |  
       #     cd "src/FreeCode.Exceptions"
