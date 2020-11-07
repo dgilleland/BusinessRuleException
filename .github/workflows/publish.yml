@@ -17,7 +17,7 @@ jobs:
 
       - name: Run commands
         run: |
-          dotnet pack --configuration Release
+          dotnet pack "src/FreeCode.Exceptions/FreeCode.Exceptions.csproj" --configuration Release
           dotnet nuget push "src/FreeCode.Exceptions/bin/Release/FreeCode.Exceptions.0.1.0.nupkg" --source "github"
 
       # # Publish
