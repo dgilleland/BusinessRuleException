@@ -9,7 +9,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-
+      - name: Install NuGet client
+        uses: warrenbuckley/Setup-Nuget@v1
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
       #   with:
@@ -19,7 +20,19 @@ jobs:
         run: |
           dotnet pack "src/FreeCode.Exceptions/FreeCode.Exceptions.csproj" --configuration Release
           dotnet nuget push "src/FreeCode.Exceptions/bin/Release/FreeCode.Exceptions.0.1.0.nupkg" --source "github"
+      # - name: Build solution and generate NuGet package
+      #   run: |  
+      #     cd "src/FreeCode.Exceptions"
+      #     dotnet pack -c Release -o out  
 
+      # - name: Install NuGet client
+      #   uses: warrenbuckley/Setup-Nuget@v1
+        
+      # - name: Add private GitHub registry to NuGet
+      #   run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN }}
+        
+      # - name: Push generated package to GitHub registry
+      #   run: nuget push .\SOLUTION_FOLDER\PROJECT_FOLDER\out\*.nupkg -Source "GPR" -SkipDuplicate
       # # Publish
       # - name: publish on version change
       #   id: publish_nuget
