@@ -17,6 +17,8 @@ jobs:
       #     dotnet-version: 3.1.200
       - name: CD to Project Folder
         run: cd src\FreeCode.Exceptions
+      - name: DIR
+        run: dir
       - name: Add GitHub as NuGet source
         run: dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
       - name: Create Release package
