@@ -7,8 +7,10 @@ namespace FreeCode.Exceptions
     {
         readonly string DataItemName;
         readonly TDataType ActualValue;
-        public BusinessRuleException(string message, string dataItem, TDataType actual): base(message)
+        public BusinessRuleException(string message, string dataItemName, TDataType actualValue) : base(message + $" ([{dataItemName}] was [{actualValue}])")
         {
+            DataItemName = dataItemName;
+            ActualValue = actualValue;
         }
     }
 }

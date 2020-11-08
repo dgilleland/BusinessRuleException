@@ -10,7 +10,7 @@ namespace FreeCode.Exceptions
         public BusinessRuleCollectionException(string message) : base(message) { }
         public BusinessRuleCollectionException(string message, ICollection<Exception> rules) : base(message) 
         {
-
+            Rules = rules;
         }
     }
 }
