@@ -15,16 +15,16 @@ jobs:
       #   uses: actions/setup-dotnet@v1
       #   with:
       #     dotnet-version: 3.1.200
-      - name: DIR before CD
-        run: dir
-      - name: CD to Project Folder
-        run: cd src\FreeCode.Exceptions
-      - name: DIR after CD
-        run: dir
+      # - name: DIR before CD
+      #   run: dir
+      # - name: CD to Project Folder
+      #   run: cd src\FreeCode.Exceptions
+      # - name: DIR after CD
+      #   run: dir
       - name: Add GitHub as NuGet source
         run: dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
       - name: Create Release package
-        run: dotnet pack -c Release -o out
+        run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
       - name: Publish package
         run: dotnet nuget push out\FreeCode.Exceptions.0.1.0.nupkg --source "github" -SkipDuplicate
       # - name: Run commands
