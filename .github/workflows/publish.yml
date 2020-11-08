@@ -30,7 +30,7 @@ jobs:
       - name: Publish package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" --skip-duplicate
+        run: dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" --skip-duplicate --api-key GITHUB_TOKEN
       # - name: Run commands
       #   run: |
           
