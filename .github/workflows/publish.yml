@@ -29,10 +29,10 @@ jobs:
       #   run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
       - name: Publish package
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
           dotnet nuget 
-          dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" --skip-duplicate --api-key GITHUB_TOKEN
+          dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" --skip-duplicate --api-key API_TOKEN
       # - name: Run commands
       #   run: |
           
