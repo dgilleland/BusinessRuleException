@@ -23,6 +23,8 @@ jobs:
       #   run: dir
       - name: Add GitHub as NuGet source
         run: dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
+      - name: Build Solution
+        run: dotnet build src\FreeCode.Exceptions\FreeCode.Exceptions.csproj
       - name: Create Release package
         run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
       - name: Publish package
