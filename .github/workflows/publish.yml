@@ -28,7 +28,7 @@ jobs:
       # - name: Create Release package
       #   run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
       - name: Publish package
-        run: dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" -SkipDuplicate
+        run: dotnet nuget push src\FreeCode.Exceptions\bin\Release\FreeCode.Exceptions.0.1.0.nupkg --source "github" --skip-duplicate
       # - name: Run commands
       #   run: |
           
