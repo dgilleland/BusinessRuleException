@@ -15,9 +15,11 @@ jobs:
       #   uses: actions/setup-dotnet@v1
       #   with:
       #     dotnet-version: 3.1.200
+      - name: DIR before CD
+        run: dir
       - name: CD to Project Folder
         run: cd src\FreeCode.Exceptions
-      - name: DIR
+      - name: DIR after CD
         run: dir
       - name: Add GitHub as NuGet source
         run: dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
