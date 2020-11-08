@@ -24,9 +24,9 @@ jobs:
       - name: Add GitHub as NuGet source
         run: dotnet nuget add source https://nuget.pkg.github.com/dgilleland/index.json -n github
       - name: Build Solution
-        run: dotnet build src\FreeCode.Exceptions\FreeCode.Exceptions.csproj
-      - name: Create Release package
-        run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
+        run: dotnet build src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release
+      # - name: Create Release package
+      #   run: dotnet pack src\FreeCode.Exceptions\FreeCode.Exceptions.csproj -c Release -o out
       - name: Publish package
         run: dotnet nuget push out\FreeCode.Exceptions.0.1.0.nupkg --source "github" -SkipDuplicate
       # - name: Run commands
